@@ -19,11 +19,14 @@ async function pushCode(codePassed){
     // await compare();
     return new Promise((resolve)=>{
         resolve(UIDpassBack);
-    })  
+    })
 }
 //========================================
 
 async function retrieveCode(passed) {
+    //takes in UID
+    //supposed to spit out code to be compared
+    //
     await general('/code/'+passed);
     if(globalData[0]==undefined){
         alert("Sorry, not a valid UID");

@@ -17,6 +17,15 @@ window.onload = (()=>{
         hide();
         show('settingsPage');
     });
+    
+    //==================================
+    
+    document.getElementById("input").onkeyup = function(e){
+      e.preventDefault();
+      if(e.keyCode == 13){
+         compare();
+      }
+  }
 
 
 

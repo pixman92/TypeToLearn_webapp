@@ -39,39 +39,64 @@ async function retrieveCode(passed) {
 }
 var meCode;
 function spitOut(lineIndex){
-
-    if(globalData[0].search(/\n/)>=1){
-      meCode = globalData[0].split('\n')[lineIndex].trim();
+    //function that spits out code
+    //one line at a time
+    
+    if(lineIndex>=globalData[0].split('\n').length){
+      alert("All done!");
     }else{
-      // meCode = globalData[0]
+      if(globalData[0].search(/\n/)>=1 && lineIndex<globalData[0].split('\n').length){
+        meCode = globalData[0].split('\n')[lineIndex].trim();
+        // meCode.slice(0, meCode.length-1);
+        if(meCode.length>0){
+          console.log('true', meCode);
+        }
+      }else{
+        // meCode = globalData[0]
+      }
+      console.log('meCode', meCode);
+      document.getElementById("code").innerText = meCode;
+      if(meCode){
+          document.getElementById('none').style.display = "none";
+      }
+  
+      if(document.getElementById('input').innerText==meCode){
+          console.log('correct!');
+          spitOut(lineIndex++);
+      }
+      
     }
-    console.log('meCode', meCode);
-    document.getElementById("code").innerText = meCode;
-    if(meCode){
-        document.getElementById('none').style.display = "none";
-    }
+    
 
-    if(document.getElementById('input').innerText==meCode){
-        console.log('correct!');
-        spitOut(lineIndex++);
-    }
 
 }
 var textAreaVal="";
-var index = 1;
+var index = 0;
 function compare(){
   textAreaVal = document.getElementById('input').value;
-  if(meCode==textAreaVal){
-    console.log('1st');
+  textAreaVal = textAreaVal.slice(0, textAreaVal.length-1);
+  
+
+  
+  
+  
+  if(textAreaVal=="skip"){
+    console.log('2nd')
     index++;
     spitOut(index);
+    document.getElementById('input').value = "";
   }else{
-    if(textAreaVal=="skip"){
-      console.log('2nd')
+    if(meCode==textAreaVal){
+      console.log('1st');
       index++;
       spitOut(index);
+      document.getElementById('input').value = "";
+      
+      
     }else{
       alert("Not quite there!");
+      document.getElementById('input').value = "";
+      
     }
   }
 }

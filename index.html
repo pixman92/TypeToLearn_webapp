@@ -1,15 +1,142 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=100, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Type To Learn</title>
-    <script src="script.js"></script>
+    <!-- <script src="showhide.js"></script> -->
+    <!-- <script src="eventListeners.js"></script> -->
+    <script src="helper_functions.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCNWGJ75WnxPc_dlyS2bj06etO7fl2Jnp4",
+            authDomain: "typetolearn-834bc.firebaseapp.com",
+            databaseURL: "https://typetolearn-834bc.firebaseio.com",
+            projectId: "typetolearn-834bc",
+            storageBucket: "typetolearn-834bc.appspot.com",
+            messagingSenderId: "1310947487"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- //======================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    
+
+    <!-- //======================================== -->
+    <!-- <script src="script.js"></script> -->
+    <style>
+        #input{
+            resize: none;
+            white-space: nowrap;
+            width: 55em;
+        }
+        #settings{
+            margin: auto;
+            width: 33%;
+        }
+        #addCodePage, #settingsPage{
+            display: none;
+        }
+
+        #codeToSaveHere{
+            width:80%;
+            margin: auto;
+            height: 8em;
+        }
+        #UID{
+            font-weight: bold;
+        }
+        #toolbar{
+            padding: em;
+            height: 5em;
+        }
+        #bottomDiv{
+            height: 4em;
+        }
+        h2{
+            text-decoration: underline;
+        }
+        #head{
+            overflow: hidden;
+            background-color: white;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+            text-align: center;
+            font-size: 2em;
+            border: 3px solid;
+        }
+        #footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            
+            color: white;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .itemGrid{
+            margin: 1em;
+            padding: .2em;
+        }
+    </style>
 </head>
 <body>
-    <h1>Type to Learn</h1>
-    <textarea id="inputText" cols="30" rows="1"></textarea>
-    <button id="compare">Compare</button>
-</body>
-</html>
+
+        <!-- <ons-page> -->
+            <!-- <ons-toolbar> -->
+                <h1 id="head">Type to Learn!</h1>
+            <!-- </div></ons-toolbar> -->
+            <br><br><br>
+            
+            <div id="typingPage">
+                <br><br><br>
+                <h2 id="none">No CODE selected at this time...</h2>
+                <div id="code"></div>
+                <textarea id="input"></textarea>
+                <button id="enterAndCheckButton">Check</button>
+            </div>
+            
+            
+            
+            
+            <div id="addCodePage">
+                <!-- <ons-page id="addCodePage"> -->
+                    <h2>Add Code</h2>
+                    <textarea id="codeToSaveHere"></textarea>
+                    <button id="saveCodeButton">Save</button>
+                    <br><br>
+                    <div id="text">This is your Unique ID for your Code; try not to lose it!</div>
+                    <div id="UID"></div>
+                </div>
+                
+    <div id="settingsPage">
+        <!-- <ons-page id="settings"> -->
+            <h2>Settings</h2>
+            Enter UID:<br>
+            <textarea id="UIDEntered" cols="30" rows="1"></textarea>
+            <br><button id="enterUID">Enter</button>
+            
+            <br><br>
+            <div id="codeMe"></div>
+        </div>
+        <div id="footer" >
+                <button class="itemGrid" id="typing">Typing</button>
+                <button class="itemGrid" id="adding">Adding</button>
+                <button class="itemGrid" id="settingsButton">Settings</button>
+                
+                
+            </div>
+            
+        <!-- </ons-page> -->
+        </body>
+        <script src="eventListeners.js"></script>
+        <script src="showhide.js"></script>
+        <script src="script.js"></script>
+
+
+        </html>

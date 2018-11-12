@@ -39,7 +39,12 @@ async function retrieveCode(passed) {
 }
 var meCode;
 function spitOut(lineIndex){
-    meCode = globalData[0].split('\n')[lineIndex].trim();
+
+    if(globalData[0].search(/\n/)>=1){
+      meCode = globalData[0].split('\n')[lineIndex].trim();
+    }else{
+      // meCode = globalData[0]
+    }
     console.log('meCode', meCode);
     document.getElementById("code").innerText = meCode;
     if(meCode){
@@ -47,11 +52,30 @@ function spitOut(lineIndex){
     }
 
     if(document.getElementById('input').innerText==meCode){
-        console.log('correct!', );
+        console.log('correct!');
         spitOut(lineIndex++);
     }
 
 }
+var textAreaVal="";
+var index = 1;
+function compare(){
+  textAreaVal = document.getElementById('input').value;
+  if(meCode==textAreaVal){
+    console.log('1st');
+    index++;
+    spitOut(index);
+  }else{
+    if(textAreaVal=="skip"){
+      console.log('2nd')
+      index++;
+      spitOut(index);
+    }else{
+      alert("Not quite there!");
+    }
+  }
+}
+
 
 // async function compare() {
     

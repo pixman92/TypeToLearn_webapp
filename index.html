@@ -21,6 +21,9 @@
         };
         firebase.initializeApp(config);
     </script>
+
+  
+
     <!-- //======================================== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     
@@ -135,9 +138,23 @@
             
         <!-- </ons-page> -->
         </body>
-        <script src="eventListeners.js"></script>
         <script src="showhide.js"></script>
         <script src="script.js"></script>
+        <script src="eventListeners.js"></script>
+        <script>
+                //========================================
+                // start button
+        
+                document.getElementById('start').addEventListener('click', ()=>{
+                    alert('Starting');
+                    document.getElementById('start').style.display= 'none';
+                    spitOut(0);
+                });
+    
+    
+    
+    
+        </script>
 
 
         </html>

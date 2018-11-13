@@ -38,12 +38,13 @@ async function retrieveCode(passed) {
 
 }
 var meCode;
-function spitOut(lineIndex){
+async function spitOut(lineIndex){
     //function that spits out code
     //one line at a time
     
     if(lineIndex>=globalData[0].split('\n').length){
       alert("All done!");
+      spitOut(0);
     }else{
       if(globalData[0].search(/\n/)>=1 && lineIndex<globalData[0].split('\n').length){
         meCode = globalData[0].split('\n')[lineIndex].trim();

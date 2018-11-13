@@ -1,12 +1,11 @@
-
 window.onload = (()=>{
     //========================================
     // eventListeners for botton toolbar buttons
     
     document.getElementById('typing').addEventListener('click', ()=>{
         hide();
-        // spitOut(0);
         show('typingPage');
+        spitOut(0);
     });
     
     document.getElementById('adding').addEventListener('click', ()=>{
@@ -29,13 +28,6 @@ window.onload = (()=>{
   }
 
 
-    //========================================
-    // start button
-
-    document.getElementById('start').addEventListener('click', ()=>{
-        spitOut(0);
-        document.getElementById('start').style.display= 'none';
-    });
 
 
     

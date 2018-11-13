@@ -5,6 +5,7 @@ window.onload = (()=>{
     
     document.getElementById('typing').addEventListener('click', ()=>{
         hide();
+        // spitOut(0);
         show('typingPage');
     });
     
@@ -19,6 +20,13 @@ window.onload = (()=>{
     });
 
 
+    //========================================
+    // start button
+
+    document.getElementById('start').addEventListener('click', ()=>{
+        spitOut(0);
+        document.getElementById('start').style.display= 'none';
+    });
 
 
     
@@ -26,9 +34,12 @@ window.onload = (()=>{
     // entering your UID
     document.getElementById('enterUID').addEventListener('click', ()=>{
         var tmp = document.getElementById("UIDEntered").value;
+        if(tmp.charAt(tmp.length-1) == "\n"){
+           tmp = tmp.slice(0, tmp.length-1);
+        }
         retrieveCode(tmp.toString()).then(()=>{
             document.getElementById('codeMe').innerText = globalData[0];
-
+            
         });
     });
 

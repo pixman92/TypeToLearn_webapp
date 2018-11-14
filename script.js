@@ -41,7 +41,6 @@ var meCode;
 async function spitOut(lineIndex){
     //function that spits out code
     //one line at a time
-    
     if(lineIndex>=globalData[0].split('\n').length){
       alert("All done!");
       spitOut(0);

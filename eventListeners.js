@@ -5,6 +5,7 @@ window.onload = (()=>{
     document.getElementById('typing').addEventListener('click', ()=>{
         hide();
         show('typingPage');
+        document.getElementById('none').style.display = "none";
         spitOut(0);
     });
     

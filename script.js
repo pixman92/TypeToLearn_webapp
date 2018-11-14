@@ -54,14 +54,14 @@ async function spitOut(lineIndex){
         if(meCode.length>0){
           console.log('true', meCode);
         }
+        if(meCode==""){
+            meCode = "\"\"";
+        }
+        document.getElementById("code").innerText = meCode;
       }else{
         // meCode = globalData[0]
         console.log('meCode', meCode);
-        document.getElementById("code").innerText = meCode;
-        if(meCode){
-            document.getElementById('none').style.display = "none";
-        }
-        
+     
         if(document.getElementById('input').innerText==meCode){
             console.log('correct!');
             spitOut(lineIndex++);

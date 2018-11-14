@@ -1,0 +1,143 @@
+
+
+/* CSS for when small */
+@media screen and (max-width:600px){
+    #input{
+        /* resize: none; */
+        white-space: nowrap;
+        width: 98%;
+        font-size: 2em;
+        margin: auto;
+
+    }
+    #settings{
+        margin: auto;
+        width: 33%;
+    }
+    #addCodePage, #settingsPage{
+        display: none;
+    }
+    
+    #codeToSaveHere{
+        width:80%;
+        margin: auto;
+        height: 8em;
+    }
+    #UID{
+        font-weight: bold;
+    }
+    #toolbar{
+        padding: em;
+        height: 5em;
+    }
+    #bottomDiv{
+        height: 4em;
+    }
+    h2{
+        text-decoration: underline;
+    }
+    #head{
+        border: 3px solid;
+        max-width: 80em; 
+        margin: auto;
+        overflow: hidden;
+        background-color: white;
+        margin-top: .5em;
+        top: 2.8em; /* Position the navbar at the top of the page */
+        text-align: center;
+        font-size: 1.1em;
+    }
+    #footer{
+        position: fixed;
+        left: 0;
+        bottom: 4em;
+        width: 100%;
+        
+        color: white;
+        text-align: center;
+        margin-bottom: 0em;
+    }
+    .itemGrid{
+        margin: 1em;
+        padding: .2em;
+    }
+    #settingsPage{
+        font-size: 1.8em;
+    }
+    #UIDEntered{
+        font-size: 0.82em;
+        width: 88%;
+    }
+    button{
+        font-size: 1.1em;
+    }
+    #footer{
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+/* ====================================== */
+/* CSS for when big */
+@media screen and (min-width:600px){
+
+    #input{
+        resize: none;
+        white-space: nowrap;
+        width: 55em;
+        font-size: 4em;
+    }
+    #settings{
+        margin: auto;
+        width: 33%;
+    }
+    #addCodePage, #settingsPage{
+        display: none;
+    }
+    
+    #codeToSaveHere{
+        width:80%;
+        margin: auto;
+        height: 8em;
+    }
+    #UID{
+        font-weight: bold;
+    }
+    #toolbar{
+        padding: em;
+        height: 5em;
+    }
+    #bottomDiv{
+        height: 4em;
+    }
+    h2{
+        text-decoration: underline;
+    }
+    #head{
+        margin: auto;
+        overflow: hidden;
+        background-color: white;
+        top: 0; /* Position the navbar at the top of the page */
+        max-width: 100%; /* Full width */
+        text-align: center;
+        font-size: 2em;
+        border: 3px solid;
+    }
+    #footer{
+        position: fixed;
+        left: 0;
+        bottom: 4em;
+        width: 100%;
+        
+        color: white;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    .itemGrid{
+        margin: 1em;
+        padding: .2em;
+    }
+}

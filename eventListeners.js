@@ -17,6 +17,10 @@ window.onload = (()=>{
         hide();
         show('settingsPage');
     });
+
+    document.getElementById('enterAndCheckButton').addEventListener('click', ()=>{
+        compare();
+    });
     
     //==================================
     

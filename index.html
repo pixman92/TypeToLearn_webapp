@@ -22,6 +22,7 @@
         firebase.initializeApp(config);
     </script>
 
+    <link rel="stylesheet" href="css.css">
   
 
     <!-- //======================================== -->
@@ -31,78 +32,19 @@
     <!-- //======================================== -->
     <!-- <script src="script.js"></script> -->
     <style>
-        #input{
-            resize: none;
-            white-space: nowrap;
-            width: 55em;
-            font-size: 1em;
-        }
-        #settings{
-            margin: auto;
-            width: 33%;
-        }
-        #addCodePage, #settingsPage{
-            display: none;
-        }
-
-        #codeToSaveHere{
-            width:80%;
-            margin: auto;
-            height: 8em;
-        }
-        #UID{
-            font-weight: bold;
-        }
-        #toolbar{
-            padding: em;
-            height: 5em;
-        }
-        #bottomDiv{
-            height: 4em;
-        }
-        h2{
-            text-decoration: underline;
-        }
-        #head{
-            overflow: hidden;
-            background-color: white;
-            position: fixed; /* Set the navbar to fixed position */
-            top: 0; /* Position the navbar at the top of the page */
-            width: 75%; /* Full width */
-            text-align: center;
-            font-size: 2em;
-            border: 3px solid;
-        }
-        #footer{
-            position: fixed;
-            left: 0;
-            bottom: 4em;
-            width: 100%;
-            
-            color: white;
-            text-align: center;
-            margin-bottom: 2em;
-        }
-        .itemGrid{
-            margin: 1em;
-            padding: .2em;
-        }
+      
     </style>
 </head>
 <body>
-
-        <!-- <ons-page> -->
-            <!-- <ons-toolbar> -->
-                <h1 id="head">Type to Learn!</h1>
-            <!-- </div></ons-toolbar> -->
-            <br><br><br>
-            
-            <div id="typingPage">
+                <h1><div id="head">Type to Learn!</div></h1>
+         <div id="typingPage">
                 <br><br><br>
-                <h2 id="none">No CODE selected at this time...</h2><span><button id="start">Start</button></span>
+                <h2 id="none">No CODE selected at this time...</h2><span>
+                    <!-- <button id="start">Start</button> -->
+                </span>
                 <div id="code"></div>
                 <textarea id="input" rows="1"></textarea>
-                <button id="enterAndCheckButton">Check</button>
+                <br><button id="enterAndCheckButton">Check</button>
             </div>
             
             
@@ -119,6 +61,7 @@
                 </div>
                 
     <div id="settingsPage">
+            -LRArPP4LYnUxeYu8xS5
         <!-- <ons-page id="settings"> -->
             <h2>Settings</h2>
             Enter UID:<br>

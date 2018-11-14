@@ -46,6 +46,8 @@ async function spitOut(lineIndex){
       alert("All done!");
       spitOut(0);
     }else{
+        //take in globalData
+        //while index is less than remaining strings
       if(globalData[0].search(/\n/)>=1 && lineIndex<globalData[0].split('\n').length){
         meCode = globalData[0].split('\n')[lineIndex].trim();
         // meCode.slice(0, meCode.length-1);
@@ -54,19 +56,19 @@ async function spitOut(lineIndex){
         }
       }else{
         // meCode = globalData[0]
-      }
-      console.log('meCode', meCode);
-      document.getElementById("code").innerText = meCode;
-      if(meCode){
-          document.getElementById('none').style.display = "none";
-      }
-  
-      if(document.getElementById('input').innerText==meCode){
-          console.log('correct!');
-          spitOut(lineIndex++);
-      }
-      
+        console.log('meCode', meCode);
+        document.getElementById("code").innerText = meCode;
+        if(meCode){
+            document.getElementById('none').style.display = "none";
+        }
+        
+        if(document.getElementById('input').innerText==meCode){
+            console.log('correct!');
+            spitOut(lineIndex++);
+        }
+        
     }
+}
     
 
 
@@ -75,16 +77,20 @@ var textAreaVal="";
 var index = 0;
 function compare(){
   textAreaVal = document.getElementById('input').value;
-  textAreaVal = textAreaVal.slice(0, textAreaVal.length-1);
+  if(textAreaVal.charAt(textAreaVal.length-1)=='\n'){
+      textAreaVal = textAreaVal.slice(0, textAreaVal.length-1);
+
+  }
   
 
   
   
   
-  if(textAreaVal=="skip"){
+  if(textAreaVal=="skip" || textAreaVal=="Skip"){
     console.log('2nd')
     index++;
     spitOut(index);
+    alert('skipped!');
     document.getElementById('input').value = "";
   }else{
     if(meCode==textAreaVal){

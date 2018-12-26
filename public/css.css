@@ -1,27 +1,29 @@
 
-/* CSS for when Under 360 */
-@media screen and (min-width:400px){
-    ul,#menu{
-        /* list-style-type: none; */
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: grey;
-        /* text-align: center */
-    }
-
-    button{
-        /* font-size: 10em; */
-    }
-
-}
-
 /* CSS for when small */
 @media screen and (max-width:600px){
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: blue;
+    }
+    #footer > div{
+        color: rgb(192, 192, 192);
+        font-size: 1.3em;
+        /* border: 1px grey solid; */
+        margin: auto;
+        padding: 1.2em;
+    }
+    #footer > div:hover{
+        color: rgb(255, 255, 255);
+        font-size: 1.3em;
+        border: 1px rgb(189, 189, 189) solid;
+        margin: auto;
+        padding: 1.4em;
+    }
     #input{
         /* resize: none; */
         white-space: nowrap;
-        width: 98%;
+        /* width: 98%; */
         font-size: 2em;
         margin: auto;
 
@@ -60,7 +62,7 @@
         top: 2.8em; Position the navbar at the top of the page */
         text-align: center;
         font-size: 2em;
-        color: lightgrey;  
+        color: rgb(255, 255, 255);  
         margin: 0;  
         top: 0;
     }
@@ -78,23 +80,6 @@
         background-color: grey;
         /* text-align: center */
     }
-    li{
-        float: left;
-    }
-    #footer{
-        /* position: fixed; */
-        /* left: 0; */
-        /* bottom: 4em; */
-        width: 100%;
-        
-        color: white;
-        text-align: center;
-        /* margin-bottom: 0em; */
-    }
-    .itemGrid{
-        margin: 1em;
-        padding: .2em;
-    }
     #settingsPage{
         font-size: 1.8em;
     }
@@ -102,13 +87,80 @@
         font-size: 0.82em;
         width: 88%;
     }
-    button{
-        font-size: 1.1em;
+    
+    
+
+    #typingPage{
+        margin-top: 8em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
     }
-    #footer{
-        font-size: 0.8em;
+    #typingPage > div > textarea{
+        /* background-color: blue; */
+        width: 100%;
+        grid-column: 1/2;
+    }
+    #typingPage > div > .next{
+        grid-column: 1/3;
+        grid-row: 2;
+        
+    }
+    #enterAndCheckButton{
+        margin-left: 25%;
+        font-size: .8em;
+        width: 50%;
     }
 }
+
+
+/* //======================================== */
+/* CSS for when Under 360 */
+@media screen and (min-width:400px){
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: blue;
+    }
+    #footer > div{
+        color: rgb(135, 156, 144);
+        font-size: 1.3em;
+        /* border: 1px grey solid; */
+        margin: auto;
+    }
+    #footer > div:hover{
+        color: rgb(255, 255, 255);
+        font-size: 1.3em;
+        border: 1px rgb(189, 189, 189) solid;
+    }
+
+    #head{
+        /* border: 3px solid; */
+        max-width: 80em; 
+        /* margin: auto; */
+        overflow: hidden;
+        background-color: #4680dd;
+        /* margin-top: .5em;
+        top: 2.8em; Position the navbar at the top of the page */
+        text-align: center;
+        font-size: 2em;
+        color: lightgrey;  
+        margin: 0;  
+        top: 0;
+    }
+
+    /* //========================================*/
+
+    #typingGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+   
+
+}
+
 
 
 
@@ -117,7 +169,22 @@
 /* ====================================== */
 /* CSS for when big */
 @media screen and (min-width:600px){
-
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: blue;
+    }
+    #footer > div{
+        color: rgb(135, 156, 144);
+        font-size: 1.3em;
+        /* border: 1px grey solid; */
+        margin: auto;
+    }
+    #footer > div:hover{
+        color: rgb(255, 255, 255);
+        font-size: 1.3em;
+        border: 1px rgb(189, 189, 189) solid;
+    }
     #input{
         resize: none;
         white-space: nowrap;
@@ -151,24 +218,20 @@
         text-decoration: underline;
     }
     #head{
+        /* border: 3px solid; */
+        max-width: 80em; 
+        /* margin: auto; */
         overflow: hidden;
-        background-color: white;
-        max-width: 100%; /* Full width */
+        background-color: #4680dd;
+        /* margin-top: .5em;
+        top: 2.8em; Position the navbar at the top of the page */
         text-align: center;
         font-size: 2em;
-        /* border: 3px solid; */
+        color: lightgrey;  
+        margin: 0;  
+        top: 0;
     }
-    #footer{
-        position: fixed;
-        left: 0;
-        bottom: 4em;
-        width: 100%;
-        
-        color: white;
-        text-align: center;
-        margin-bottom: 2em;
-    }
-    .itemGrid{
+  .itemGrid{
         margin: 1em;
         padding: .2em;
     }

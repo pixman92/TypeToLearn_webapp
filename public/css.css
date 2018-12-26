@@ -1,4 +1,20 @@
 
+/* CSS for when Under 360 */
+@media screen and (min-width:400px){
+    ul,#menu{
+        /* list-style-type: none; */
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: grey;
+        /* text-align: center */
+    }
+
+    button{
+        /* font-size: 10em; */
+    }
+
+}
 
 /* CSS for when small */
 @media screen and (max-width:600px){
@@ -33,29 +49,47 @@
     #bottomDiv{
         height: 4em;
     }
-    h2{
-        text-decoration: underline;
-    }
+  
     #head{
-        border: 3px solid;
+        /* border: 3px solid; */
         max-width: 80em; 
-        margin: auto;
+        /* margin: auto; */
         overflow: hidden;
-        background-color: white;
-        margin-top: .5em;
-        top: 2.8em; /* Position the navbar at the top of the page */
+        background-color: #4680dd;
+        /* margin-top: .5em;
+        top: 2.8em; Position the navbar at the top of the page */
         text-align: center;
-        font-size: 1.1em;
+        font-size: 2em;
+        color: lightgrey;  
+        margin: 0;  
+        top: 0;
+    }
+    #underHead{
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        
+    }
+    ul,#menu{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: grey;
+        /* text-align: center */
+    }
+    li{
+        float: left;
     }
     #footer{
-        position: fixed;
-        left: 0;
-        bottom: 4em;
+        /* position: fixed; */
+        /* left: 0; */
+        /* bottom: 4em; */
         width: 100%;
         
         color: white;
         text-align: center;
-        margin-bottom: 0em;
+        /* margin-bottom: 0em; */
     }
     .itemGrid{
         margin: 1em;
@@ -117,14 +151,12 @@
         text-decoration: underline;
     }
     #head{
-        margin: auto;
         overflow: hidden;
         background-color: white;
-        top: 0; /* Position the navbar at the top of the page */
         max-width: 100%; /* Full width */
         text-align: center;
         font-size: 2em;
-        border: 3px solid;
+        /* border: 3px solid; */
     }
     #footer{
         position: fixed;

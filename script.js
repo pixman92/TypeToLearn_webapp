@@ -42,14 +42,14 @@ function spitOut(lineIndex){
     meCode = globalData[0].split('\n')[lineIndex].trim();
     console.log('meCode', meCode);
     document.getElementById("code").innerText = meCode;
-    if(meCode){
-        document.getElementById('none').style.display = "none";
-    }
+    // if(meCode){
+    //     document.getElementById('none').style.display = "none";
+    // }
 
-    if(document.getElementById('input').innerText==meCode){
-        console.log('correct!', );
-        spitOut(lineIndex++);
-    }
+    // if(document.getElementById('input').innerText==meCode){
+    //     console.log('correct!', );
+    //     spitOut(lineIndex++);
+    // }
 
 }
 
@@ -98,3 +98,39 @@ async function pullCode(index) {
     
 }
 
+//================================================
+var testString = "";
+function makeColor(index){
+
+    var input = meCode;
+    var tmpInput = document.getElementById('code');
+
+    // if(color=='red'){
+    //     tmpInput.innerHTML =  '<span class="red">' + input.substring(index, index+1) + '</span>'
+
+    // }
+    // if(color=='green'){
+    //     tmpInput.innerHTML =  '<span class="green">' + input.substring(index, index+1) + '</span>'
+
+    // }
+    testString = input.substring(index-1, index);
+    console.log('string is: ', testString);
+    
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        // var isEscape = false;
+        if ("key" in evt) {
+            console.log(`${evt.key}`);
+            if(evt.key == testString){
+                console.log(evt.key + " is correct!" );
+            }
+        }
+
+    }
+        
+
+
+
+    tmpInput.innerHTML = input.substring(0, index) + "<span class='big green'>" +  + '</span>' + input.substring(index+1, input.length);
+
+}

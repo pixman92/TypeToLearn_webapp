@@ -26,6 +26,8 @@
             resize: none;
             white-space: nowrap;
             width: 55em;
+            font-size: 1.5em;
+            height: 1.5em;
         }
         #settings{
             margin: auto;
@@ -52,6 +54,7 @@
         }
         h2{
             text-decoration: underline;
+            font-size: 2em;
         }
         #head{
             overflow: hidden;
@@ -64,7 +67,7 @@
             border: 3px solid;
         }
         #footer{
-            position: fixed;
+            /* position: fixed; */
             left: 0;
             bottom: 0;
             width: 100%;
@@ -76,6 +79,25 @@
         .itemGrid{
             margin: 1em;
             padding: .2em;
+        }
+        #codeMe{
+            height: 45%;
+            overflow: scroll;
+        }
+        #UIDEntered{
+            height: 1.5em;
+            font-size: 1.5em;
+            width: 88%;
+        }
+        /* Font Color Class */
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+        .big{
+            font-size: 2em;
         }
     </style>
 </head>
@@ -89,10 +111,10 @@
             
             <div id="typingPage">
                 <br><br><br>
-                <h2 id="none">No CODE selected at this time...</h2>
+                <!-- <h2 id="none">No CODE selected at this time...</h2> -->
                 <div id="code"></div>
-                <textarea id="input"></textarea>
-                <button id="enterAndCheckButton">Check</button>
+                <!-- <textarea id="input"></textarea> -->
+                <button id="startButton">Start</button>
             </div>
             
             
@@ -112,10 +134,12 @@
         <!-- <ons-page id="settings"> -->
             <h2>Settings</h2>
             Enter UID:<br>
-            <textarea id="UIDEntered" cols="30" rows="1"></textarea>
+            <textarea id="UIDEntered"></textarea>
             <br><button id="enterUID">Enter</button>
             
             <br><br>
+            -LRArPP4LYnUxeYu8xS5
+            <!-- div that holds code, once UID is entered -->
             <div id="codeMe"></div>
         </div>
         <div id="footer" >

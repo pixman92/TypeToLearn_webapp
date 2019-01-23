@@ -34,12 +34,24 @@ async function retrieveCode(passed) {
         console.log('code', globalData[0]);
     }
 
+    spitOut(lineIndex);
+
     return globalData[0];
 
 }
 var meCode;
+var lineIndex=0;
 function spitOut(lineIndex){
+    // function that 'spits' out a single line of the code, 
+    // from the code base
+
+
     meCode = globalData[0].split('\n')[lineIndex].trim();
+    if(meCode==""){
+        ++lineIndex;
+        spitOut(lineIndex);
+    }
+
     console.log('meCode', meCode);
     document.getElementById("code").innerText = meCode;
     // if(meCode){
@@ -50,7 +62,8 @@ function spitOut(lineIndex){
     //     console.log('correct!', );
     //     spitOut(lineIndex++);
     // }
-
+    // document.getElementById('startButton').addEventListener('onclick', makeColor(0));
+    makeColor(0)
 }
 
 // async function compare() {
@@ -101,6 +114,8 @@ async function pullCode(index) {
 //================================================
 var testString = "";
 function makeColor(index){
+    // function that changes 'single char' to BIG font
+
 
     var input = meCode;
     var tmpInput = document.getElementById('code');
@@ -113,7 +128,7 @@ function makeColor(index){
     //     tmpInput.innerHTML =  '<span class="green">' + input.substring(index, index+1) + '</span>'
 
     // }
-    testString = input.substring(index-1, index);
+    testString = input.substring(index, index+1);
     console.log('string is: ', testString);
     
     document.onkeydown = function(evt) {
@@ -123,6 +138,17 @@ function makeColor(index){
             console.log(`${evt.key}`);
             if(evt.key == testString){
                 console.log(evt.key + " is correct!" );
+                if(index>=meCode.length-1){
+                
+                    ++lineIndex;
+                    spitOut(lineIndex);
+                    // console.log('spitout ran', lineIndex);
+                    // makeColor(0);
+                }else{
+                    index++;
+                    makeColor(index);
+                }
+                console.log('index', index);
             }
         }
 
@@ -131,6 +157,6 @@ function makeColor(index){
 
 
 
-    tmpInput.innerHTML = input.substring(0, index) + "<span class='big green'>" +  + '</span>' + input.substring(index+1, input.length);
+    tmpInput.innerHTML = input.substring(0, index) + "<span class='big'>" + testString  + '</span>' + input.substring(index+1, input.length);
 
 }

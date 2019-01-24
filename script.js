@@ -1,3 +1,5 @@
+
+
 db = firebase.database();
 
 // let newDate;
@@ -35,6 +37,7 @@ async function retrieveCode(passed) {
     }
 
     spitOut(lineIndex);
+    makeColor(0);
 
     return globalData[0];
 
@@ -45,11 +48,12 @@ function spitOut(lineIndex){
     // function that 'spits' out a single line of the code, 
     // from the code base
 
-
+    
     meCode = globalData[0].split('\n')[lineIndex].trim();
     if(meCode==""){
-        ++lineIndex;
-        spitOut(lineIndex);
+        lineIndex+=2;
+        // spitOut(lineIndex);
+        meCode = globalData[0].split('\n')[lineIndex].trim();
     }
 
     console.log('meCode', meCode);
@@ -63,7 +67,31 @@ function spitOut(lineIndex){
     //     spitOut(lineIndex++);
     // }
     // document.getElementById('startButton').addEventListener('onclick', makeColor(0));
-    makeColor(0)
+    // makeColor(0)
+
+    document.getElementById('area').addEventListener('input', ()=>{
+        // document.getElementById('area').focus();
+        makeColor(index);
+        // console.log('changed!'); 
+
+
+        if(savedLetter==testString){
+            if(index>=meCode.length-1){
+                // console.log(savedLetter + " is correct!" );
+                console.log('lineIndex', lineIndex);
+                lineIndex;
+                index=0;
+                spitOut(lineIndex);
+        
+            }else{
+                ++index;
+                makeColor(index);
+            }
+        }
+
+
+    });
+
 }
 
 // async function compare() {
@@ -113,6 +141,7 @@ async function pullCode(index) {
 
 //================================================
 var testString = "";
+var index = 0;
 function makeColor(index){
     // function that changes 'single char' to BIG font
 
@@ -120,43 +149,71 @@ function makeColor(index){
     var input = meCode;
     var tmpInput = document.getElementById('code');
 
-    // if(color=='red'){
-    //     tmpInput.innerHTML =  '<span class="red">' + input.substring(index, index+1) + '</span>'
-
-    // }
-    // if(color=='green'){
-    //     tmpInput.innerHTML =  '<span class="green">' + input.substring(index, index+1) + '</span>'
-
-    // }
     testString = input.substring(index, index+1);
     console.log('string is: ', testString);
-    
-    document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        // var isEscape = false;
-        if ("key" in evt) {
-            console.log(`${evt.key}`);
-            if(evt.key == testString){
-                console.log(evt.key + " is correct!" );
-                if(index>=meCode.length-1){
-                
-                    ++lineIndex;
-                    spitOut(lineIndex);
-                    // console.log('spitout ran', lineIndex);
-                    // makeColor(0);
-                }else{
-                    index++;
-                    makeColor(index);
-                }
-                console.log('index', index);
-            }
-        }
 
-    }
-        
+
+
+
+
+    
+    // document.onkeydown = function(evt) {
+    //     evt = evt || window.event;
+    //     // var isEscape = false;
+    //     if ("key" in evt) {
+    //         console.log(`${evt.key}`);
+    //         if(evt.key == testString){
+    //             console.log(evt.key + " is correct!" );
+    //             if(index>=meCode.length-1){
+                
+    //                 ++lineIndex;
+    //                 spitOut(lineIndex);
+    //                 // console.log('spitout ran', lineIndex);
+    //                 // makeColor(0);
+    //             }else{
+    //                 index++;
+    //                 makeColor(index);
+    //             }
+    //             console.log('index', index);
+    //         }
+    //     }
+
+    // }
+
+    
+
 
 
 
     tmpInput.innerHTML = input.substring(0, index) + "<span class='big'>" + testString  + '</span>' + input.substring(index+1, input.length);
 
+    
+    
+    isMoreChar();
+
+}
+
+
+var savedLetter = "";
+function isMoreChar(){
+    // function that determines if there is more than 1 char in input
+
+    var val = document.getElementById('area').value;
+
+
+    // logic statement: at either path, remove whole box of characters
+    if(val.length>2){
+        pullValue();
+        return true;
+    }else{
+        pullValue();
+        return false;
+    }
+}
+
+function pullValue(){
+    tmp = document.getElementById('area').value;
+    savedLetter = tmp.substring(0,1);
+    console.log('savedLetter', savedLetter);
+    document.getElementById('area').value = "";
 }

@@ -1,9 +1,10 @@
 <html lang="en">
-<head>
-    <!-- <meta charset="UTF-8"> -->
-    <meta name="viewport" content="width=100, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Type To Learn</title>
+    <head>
+        <!-- <meta charset="UTF-8"> -->
+        <meta name="viewport" content="width=100, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Type To Learn</title>
+    <!-- <script src="script.js"></script> -->
     <!-- <script src="showhide.js"></script> -->
     <!-- <script src="eventListeners.js"></script> -->
     <script src="helper_functions.js"></script>
@@ -20,7 +21,6 @@
     
 
     <!-- //======================================== -->
-    <!-- <script src="script.js"></script> -->
     <style>
         #input{
             resize: none;
@@ -99,6 +99,10 @@
         .big{
             font-size: 2em;
         }
+        #area{
+            display: block;
+            width: 1.8em;
+        }
     </style>
 </head>
 <body>
@@ -114,7 +118,8 @@
                 <!-- <h2 id="none">No CODE selected at this time...</h2> -->
                 <div id="code"></div>
                 <!-- <textarea id="input"></textarea> -->
-                <button id="startButton">Start</button>
+                <!-- <button id="startButton">Start</button> -->
+                <input id="area" />
             </div>
             
             
@@ -155,11 +160,19 @@
         <script src="eventListeners.js"></script>
         <script src="showhide.js"></script>
         <script src="script.js"></script>
+
         <script>
+            // this VVV was causing Problems
+
+
             // window.onload = (()=>{
-                
+
+                // document.getElementById('area').addEventListener('input', ()=>{
+                //     // document.getElementById('area').focus();
+                //     makeColor(index);
+                //     console.log('changed!');
+                // });
             // });
         </script>
-
 
         </html>

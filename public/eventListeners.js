@@ -6,6 +6,7 @@ window.onload = (()=>{
     document.getElementById('typing').addEventListener('click', ()=>{
         hide();
         show('typingPage');
+        spitOut(0);
     });
     
     document.getElementById('adding').addEventListener('click', ()=>{

@@ -22,6 +22,11 @@
 
     <!-- //======================================== -->
     <style>
+        /* @media only screen and (max-width: 600px){ */
+            body{
+                max-width: 600px;
+            }
+        /* } */
         #input{
             resize: none;
             white-space: nowrap;
@@ -61,7 +66,8 @@
             background-color: white;
             position: fixed; /* Set the navbar to fixed position */
             top: 0; /* Position the navbar at the top of the page */
-            width: 100%; /* Full width */
+            width: 100%;
+            max-width: 600px; /* Full width */
             text-align: center;
             font-size: 2em;
             border: 3px solid;
@@ -81,7 +87,7 @@
             padding: .2em;
         }
         #codeMe{
-            height: 45%;
+            height: 25%;
             overflow: scroll;
         }
         #UIDEntered{
@@ -143,7 +149,7 @@
             <br><button id="enterUID">Enter</button>
             
             <br><br>
-            -LRArPP4LYnUxeYu8xS5
+            -LR58s7Phk3R8PYCV6l8
             <!-- div that holds code, once UID is entered -->
             <div id="codeMe"></div>
         </div>
